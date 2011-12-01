@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<h3 style="background-color:#fff9c3;padding:5px;"><u><%= @menu_location.name %>: <%= @menu.name %></u></h3>
+
+<% if @menu_items.count == 0 %>
+	<p><em>There are currently no menu items for this menu</em></p>
+<% end %>
+<% @menu_items.each do |m| %>
+	<p><b><%= m.name %>-</b> <%= m.description %></p>
+<% end %>
+
+<p><%= link_to 'Add a menu item for this menu', new_menu_item_path, :class => "button radius small" %></p>
+
+<p>
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>
+</p>

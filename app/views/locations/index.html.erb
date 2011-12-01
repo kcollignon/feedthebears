@@ -1,0 +1,14 @@
+
+<table>
+
+<% @locations.each do |location| %>
+  <tr>
+    <td style="font-size:18px;font-family:verdana, arial, times;text-align:center;"><%= location.name %></td>
+    <td><%= link_to 'View Menus', location %></td>
+<% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'New Location', new_location_path, :class => 'button small nice' %>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedthebears</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+	<div id="header">
+		<div id="logo"><%= image_tag 'logo.jpg' %></div>
+		<div id="title"><h1>UNC Dining Menus</h1><br /></div>
+	</div>
+	<div id="content">
+		<%= yield %>
+	</div>
+</div>
+		<div id="nav">
+			<ul id="nav-bar">
+				<li><%= link_to 'Home', root_path %></li>
+				<li><%= link_to 'Locations', locations_path %></li>
+				<li><%= link_to 'Menus', menus_path %></li>
+			</ul>
+		</div>
+</body>
+</html>

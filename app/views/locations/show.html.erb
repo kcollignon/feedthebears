@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dining Hall: <%= @location.name %></h1>
+
+<p>
+  <b>Menus at this location:</b>
+</p>
+	
+<ul>
+  <% @location_menus.each do |loc| %>
+  <li><%= link_to loc.name, loc %></li>
+  <% end %>
+</ul>
+<% if @location_menus.count == 0 %>
+	<p><em>There are currently no menus for this location</em></p>
+<% end %>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
